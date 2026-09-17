@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 # 1. Setup Paths (Consistent with your folder structure)
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = r"C:\GitHub-Projects\AI-Wheather-Sentiment\hamburg_data.db"
+DB_PATH = r"C:\GitHub-Projects\AI-Wheather-Sentiment\environment_data.db"
 
 # 2. API Keys from your .env
 WEATHER_KEY = os.getenv("OPENWEATHER_API_KEY")
@@ -63,7 +63,7 @@ def save_to_sqlite(data):
     try:
         # 1. Establish connection
         # Tip: Use an absolute path if you keep seeing duplicate .db files
-        conn = sqlite3.connect('hamburg_data.db')
+        conn = sqlite3.connect('environment_data.db')
         cursor = conn.cursor()
 
         # 2. SCHEMA INITIALIZATION (The Bootstrap)

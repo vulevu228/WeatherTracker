@@ -13,11 +13,14 @@ This repository hosts an automated data pipeline that tracks and logs weather co
 
 ## 📈 Dashboard
 
+![Weather Tracker Dashboard](images/weather-tracker.png)
+
 `weather-tracker.pbip` — a small, single-page report since the dataset is
 still short (a few thousand rows so far): average temperature and humidity
 for each city, a temperature-over-time line chart, and a weather-condition
 frequency breakdown. Kept deliberately simple rather than over-building a
-dashboard for data that's still accumulating.
+dashboard for data that's still accumulating. Light turquoise theme, easier
+on the eyes than a plain white report background.
 
 ---
 

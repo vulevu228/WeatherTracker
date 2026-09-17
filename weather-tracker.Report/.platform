@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "weather-tracker"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d4444444-4444-4444-8444-444444444441"
+  }
+}

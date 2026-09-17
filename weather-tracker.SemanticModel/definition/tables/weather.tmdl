@@ -1,0 +1,87 @@
+table weather
+	lineageTag: b2222222-2222-4222-8222-222222222221
+
+	column timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b2222222-2222-4222-8222-222222222222
+		summarizeBy: none
+		sourceColumn: timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: b2222222-2222-4222-8222-222222222223
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column temp_c
+		dataType: double
+		formatString: 0.0
+		lineageTag: b2222222-2222-4222-8222-222222222224
+		summarizeBy: none
+		sourceColumn: temp_c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column humidity_pct
+		dataType: int64
+		formatString: 0
+		lineageTag: b2222222-2222-4222-8222-222222222225
+		summarizeBy: none
+		sourceColumn: humidity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column pressure_hpa
+		dataType: int64
+		formatString: 0
+		lineageTag: b2222222-2222-4222-8222-222222222226
+		summarizeBy: none
+		sourceColumn: pressure_hpa
+
+		annotation SummarizationSetBy = Automatic
+
+	column wind_speed
+		dataType: double
+		formatString: 0.0
+		lineageTag: b2222222-2222-4222-8222-222222222227
+		summarizeBy: none
+		sourceColumn: wind_speed
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: b2222222-2222-4222-8222-222222222228
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition weather = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\emira\Projects\GitHub-Projects\AI-Wheather-Sentiment\overnight_weather.csv"), [Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				  #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  #"Removed Blank Rows" = Table.SelectRows(#"Promoted Headers", each [city] <> null and [city] <> ""),
+				  #"Changed Type" = Table.TransformColumnTypes(#"Removed Blank Rows", {{"timestamp", type text}, {"city", type text}, {"temp_c", type number}, {"humidity_pct", Int64.Type}, {"pressure_hpa", Int64.Type}, {"wind_speed", type number}, {"description", type text}}),
+				  #"Parsed Timestamp" = Table.TransformColumns(#"Changed Type", {{"timestamp", each
+				      let
+				          parts = Text.Split(_, " "),
+				          dateParts = Text.Split(parts{0}, "/"),
+				          timeParts = Text.Split(parts{1}, ":")
+				      in
+				          #datetime(Number.FromText(dateParts{2}), Number.FromText(dateParts{1}), Number.FromText(dateParts{0}), Number.FromText(timeParts{0}), Number.FromText(timeParts{1}), 0),
+				      type datetime}})
+				in
+				  #"Parsed Timestamp"
+
+	annotation PBI_ResultType = Table
+

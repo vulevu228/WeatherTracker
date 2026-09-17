@@ -1,0 +1,58 @@
+table _Measures
+	lineageTag: c3333333-3333-4333-8333-333333333331
+
+	measure 'Avg Temp (London)' = CALCULATE(AVERAGE(weather[temp_c]), weather[city] = "London")
+		formatString: 0.0
+		displayFolder: 1. Base measures
+		lineageTag: c3333333-3333-4333-8333-333333333332
+
+	measure 'Avg Temp (Hamburg)' = CALCULATE(AVERAGE(weather[temp_c]), weather[city] = "Hamburg")
+		formatString: 0.0
+		displayFolder: 1. Base measures
+		lineageTag: c3333333-3333-4333-8333-333333333333
+
+	measure 'Avg Humidity (London)' = CALCULATE(AVERAGE(weather[humidity_pct]), weather[city] = "London")
+		formatString: 0
+		displayFolder: 1. Base measures
+		lineageTag: c3333333-3333-4333-8333-333333333334
+
+	measure 'Avg Humidity (Hamburg)' = CALCULATE(AVERAGE(weather[humidity_pct]), weather[city] = "Hamburg")
+		formatString: 0
+		displayFolder: 1. Base measures
+		lineageTag: c3333333-3333-4333-8333-333333333335
+
+	measure 'Avg Temp' = AVERAGE(weather[temp_c])
+		formatString: 0.0
+		displayFolder: 1. Base measures
+		lineageTag: c3333333-3333-4333-8333-33333333333c
+
+	measure 'Reading Count' = COUNTROWS(weather)
+		formatString: #,##0
+		displayFolder: 1. Base measures
+		lineageTag: c3333333-3333-4333-8333-333333333336
+
+	measure 'KPI London Temp' = FORMAT([Avg Temp (London)], "0.0") & " °C avg"
+		displayFolder: 2. KPI card text
+		lineageTag: c3333333-3333-4333-8333-333333333337
+
+	measure 'KPI Hamburg Temp' = FORMAT([Avg Temp (Hamburg)], "0.0") & " °C avg"
+		displayFolder: 2. KPI card text
+		lineageTag: c3333333-3333-4333-8333-333333333338
+
+	measure 'KPI London Humidity' = FORMAT([Avg Humidity (London)], "0") & "% avg humidity"
+		displayFolder: 2. KPI card text
+		lineageTag: c3333333-3333-4333-8333-333333333339
+
+	measure 'KPI Hamburg Humidity' = FORMAT([Avg Humidity (Hamburg)], "0") & "% avg humidity"
+		displayFolder: 2. KPI card text
+		lineageTag: c3333333-3333-4333-8333-33333333333a
+
+	column Value
+		lineageTag: 0d366f25-c203-45e4-9938-cd69f1bec627
+		isNameInferred
+		sourceColumn: [Value]
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW("Value", 0)
+
