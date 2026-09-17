@@ -68,7 +68,7 @@ table weather
 		mode: import
 		source =
 				let
-				  Source = Csv.Document(File.Contents("C:\Users\emira\Projects\GitHub-Projects\AI-Wheather-Sentiment\overnight_weather.csv"), [Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				  Source = Csv.Document(File.Contents("C:\Users\emira\Projects\GitHub-Projects\weather-tracker\overnight_weather.csv"), [Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				  #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				  #"Removed Blank Rows" = Table.SelectRows(#"Promoted Headers", each [city] <> null and [city] <> ""),
 				  #"Changed Type" = Table.TransformColumnTypes(#"Removed Blank Rows", {{"timestamp", type text}, {"city", type text}, {"temp_c", type number}, {"humidity_pct", Int64.Type}, {"pressure_hpa", Int64.Type}, {"wind_speed", type number}, {"description", type text}}),

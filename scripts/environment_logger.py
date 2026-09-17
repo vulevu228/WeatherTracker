@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 # 1. Setup Paths (Consistent with your folder structure)
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = r"C:\GitHub-Projects\AI-Wheather-Sentiment\environment_data.db"
+DB_PATH = str(BASE_DIR / "environment_data.db")
 
 # 2. API Keys from your .env
 WEATHER_KEY = os.getenv("OPENWEATHER_API_KEY")
