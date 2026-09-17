@@ -2,6 +2,8 @@
 
 ![Weather Log Automation](https://github.com/vulevu228/WeatherTracker/actions/workflows/weather_logger.yml/badge.svg)
 
+*One of my first data projects (May 2026).*
+
 This repository hosts an automated data pipeline that tracks and logs weather conditions for **London** and **Hamburg**. It serves as the data foundation for future sentiment and environmental analysis.
 
 > **Status: ongoing.** The GitHub Action keeps polling and appending hourly,
