@@ -32,7 +32,7 @@ with requests.Session() as session:
             # Formatting data to match your original CSV structure
             # timestamp, city, temp, humidity, pressure, wind, description
             row = [
-                datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                datetime.now().strftime("%d/%m/%Y %H:%M"),
                 city,
                 str(data["main"]["temp"]),
                 str(data["main"]["humidity"]),

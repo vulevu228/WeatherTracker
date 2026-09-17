@@ -6,3 +6,8 @@ env/
 __pycache__/
 .DS_Store
 Thumbs.db
+
+# --- Power BI Project (.pbip) local cache & per-user settings ---
+**/.pbi/cache.abf
+**/.pbi/localSettings.json
+**/.pbi/editorSettings.json

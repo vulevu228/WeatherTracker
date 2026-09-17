@@ -4,6 +4,21 @@
 
 This repository hosts an automated data pipeline that tracks and logs weather conditions for **London** and **Hamburg**. It serves as the data foundation for future sentiment and environmental analysis.
 
+> **Status: ongoing.** The GitHub Action keeps polling and appending hourly,
+> so the dataset (and the numbers in the dashboard below) grow every day —
+> this isn't a finished, fixed-size dataset like the rest of this account's
+> Power BI projects.
+
+---
+
+## 📈 Dashboard
+
+`weather-tracker.pbip` — a small, single-page report since the dataset is
+still short (a few thousand rows so far): average temperature and humidity
+for each city, a temperature-over-time line chart, and a weather-condition
+frequency breakdown. Kept deliberately simple rather than over-building a
+dashboard for data that's still accumulating.
+
 ---
 
 ## 🚀 How it Works
