@@ -4977,3 +4977,5 @@ timestamp,city,temp_c,humidity_pct,pressure_hpa,wind_speed,description
 08/10/2026 02:01,Hamburg,12.72,91,1003,1.34,light rain
 08/10/2026 09:06,London,9.91,78,1021,3.6,clear sky
 08/10/2026 09:06,Hamburg,13.93,95,1003,6.17,moderate rain
+08/10/2026 16:35,London,14.24,58,1022,4.12,overcast clouds
+08/10/2026 16:35,Hamburg,11.41,79,1010,5.66,scattered clouds
