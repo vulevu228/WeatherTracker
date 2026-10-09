@@ -4987,3 +4987,5 @@ timestamp,city,temp_c,humidity_pct,pressure_hpa,wind_speed,description
 09/10/2026 09:12,Hamburg,10.76,82,1010,8.75,overcast clouds
 09/10/2026 16:18,London,17.86,85,1007,8.75,clear sky
 09/10/2026 16:18,Hamburg,10.74,96,1003,5.66,overcast clouds
+09/10/2026 20:58,London,13.84,72,1011,5.66,clear sky
+09/10/2026 20:58,Hamburg,13.72,96,1002,7.2,overcast clouds
