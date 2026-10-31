@@ -5203,3 +5203,5 @@ timestamp,city,temp_c,humidity_pct,pressure_hpa,wind_speed,description
 30/10/2026 16:43,Hamburg,9.93,97,1033,1.03,overcast clouds
 30/10/2026 21:33,London,11.26,91,1030,3.6,broken clouds
 30/10/2026 21:33,Hamburg,9.82,97,1033,2.57,mist
+31/10/2026 01:37,London,9.8,92,1031,1.03,haze
+31/10/2026 01:37,Hamburg,9.78,97,1033,2.06,mist
