@@ -5251,3 +5251,5 @@ timestamp,city,temp_c,humidity_pct,pressure_hpa,wind_speed,description
 06/11/2026 00:22,Hamburg,2.81,99,1029,2.57,clear sky
 06/11/2026 07:01,London,8.33,90,1023,1.03,overcast clouds
 06/11/2026 07:01,Hamburg,3.41,97,1029,3.6,fog
+06/11/2026 15:08,London,11.29,81,1022,2.06,broken clouds
+06/11/2026 15:08,Hamburg,6.41,93,1028,3.6,overcast clouds
