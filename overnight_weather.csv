@@ -5309,3 +5309,5 @@ timestamp,city,temp_c,humidity_pct,pressure_hpa,wind_speed,description
 13/11/2026 22:41,Hamburg,4.04,93,1014,3.6,few clouds
 14/11/2026 03:21,London,0.87,89,1019,1.03,scattered clouds
 14/11/2026 03:21,Hamburg,3.52,94,1016,3.09,clear sky
+14/11/2026 10:40,London,5.75,77,1017,1.54,broken clouds
+14/11/2026 10:40,Hamburg,7.11,82,1019,4.63,clear sky
